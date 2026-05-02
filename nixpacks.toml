@@ -1,0 +1,17 @@
+# Nixpacks configuration for Express backend deployment on Railway
+# This ensures Node.js 20.x and proper build steps
+
+[languages]
+nodes = ["20.17.1"]
+
+[phases.setup]
+nixPkgs = ["nodejs_20"]
+
+[phases.install]
+cmds = ["npm install"]
+
+[phases.build]
+cmds = ["npm install --production"]
+
+[start]
+cmd = "npm start"
